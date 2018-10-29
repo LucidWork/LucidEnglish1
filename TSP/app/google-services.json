@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "370251804520",
+    "firebase_url": "https://the-sejong-project.firebaseio.com",
+    "project_id": "the-sejong-project",
+    "storage_bucket": "the-sejong-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370251804520:android:5582b7ebd95b7c1c",
+        "android_client_info": {
+          "package_name": "com.thesejongproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370251804520-5alptosfq3fpqtloavkcnv39dj95djo8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thesejongproject",
+            "certificate_hash": "99a176f60954b5cacbc6ede6147b07d81cc7967d"
+          }
+        },
+        {
+          "client_id": "370251804520-c6vd5s81amvpgsdjsubn0mtj1pqch50j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmZLENG0GFg_NLSRFNDg44hsSzYGJWXF4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370251804520-c6vd5s81amvpgsdjsubn0mtj1pqch50j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

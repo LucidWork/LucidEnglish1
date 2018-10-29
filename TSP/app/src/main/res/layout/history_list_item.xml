@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <com.thesejongproject.customviews.SmartTextView
+        android:id="@+id/txtKoreanSentence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="그는 의자를 준비하고있다"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp" />
+
+    <com.thesejongproject.customviews.SmartTextView
+        android:id="@+id/txtEnglishSentence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="He is arranging chairs"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp">
+
+        <com.thesejongproject.customviews.SmartTextView
+            android:id="@+id/txtAttempts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="11 attempts"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15sp" />
+
+        <com.thesejongproject.customviews.SmartTextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

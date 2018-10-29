@@ -1,0 +1,64 @@
+<resources>
+
+    <string name="app_name">Lucid ENGLISH</string>
+
+    <string name="ok">"OK"</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_email">Email address</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="forgot_password">"Forgot Password?"</string>
+    <string name="sign_up">"Sign Up"</string>
+    <string name="profile">"Profile"</string>
+    <string name="edit">"Edit"</string>
+    <string name="save">"Save"</string>
+    <string name="update">"Update"</string>
+    <string name="first_name">"First Name"</string>
+    <string name="last_name">"Last Name"</string>
+    <string name="forgot_your_password">"Forgot Your Password?"</string>
+    <string name="forgot_password_notice">"Enter your email address below and we will send you instructions how to change password"</string>
+    <string name="send">"Send"</string>
+    <string name="submit">"Submit"</string>
+    <string name="apply">"Apply"</string>
+    <string name="exercise">"Exercise"</string>
+
+    <string name="lbl_submit">"완료"</string>
+    <string name="lbl_quit">"나가기"</string>
+    <string name="lbl_word_house">"단어집"</string>
+    <string name="lbl_menu">"메뉴"</string>
+    <string name="lbl_lession">"레쓴"</string>
+    <string name="lbl_delete">"삭제"</string>
+
+    <string name="success">"Success"</string>
+    <string name="correct">"Correct !!"</string>
+
+    <string name="please_check_connection">Please check your internet connection.</string>
+    <string name="are_you_sure_quit">"Are you sure you want to quit this exercise?"</string>
+    <string name="quit">"Quit"</string>
+    <string name="cancel">"Cancel"</string>
+    <string name="delete">"Delete"</string>
+
+    <string name="menu">"Menu"</string>
+    <string name="history">"Exercises History"</string>
+    <string name="manual">"Manual Mode"</string>
+    <string name="auto">"Auto Mode"</string>
+    <string name="vocab_levels">"Vocabulary Levels"</string>
+    <string name="tenses">"Tenses/Variations"</string>
+    <string name="quick_tutorial">"Quick Tutorial"</string>
+    <string name="logout">"Logout"</string>
+    <string name="congratulations">"CONGRATULATIONS!"</string>
+
+    <string name="logout_message">Are you sure you want to logout?</string>
+
+    <string name="generic_server_down">Server may be down please try again later</string>
+    <string name="no_internet_connection">Please check your internet connection</string>
+    <string name="generic_error">Error while receiving response</string>
+
+    <string name="validation_value_required">"This value is required"</string>
+    <string name="validation_invalid_email">Please enter valid email address</string>
+    <string name="validation_password_not_matches">Confirm password does not match with password.</string>
+    <string name="skip">Skip</string>
+</resources>

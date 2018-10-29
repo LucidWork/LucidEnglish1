@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="font_normal">"fonts/opensans_regular.ttf"</string>
+    <string name="font_bold">"fonts/opensans_semibold.ttf"</string>
+    <string name="admob_interstitial_unit_id">"ca-app-pub-7752996381768248/6688188012"</string>
+    <string name="admob_app_id">"ca-app-pub-7752996381768248~5692903217"</string>
+
+    <!--<string name="admob_interstitial_unit_id">"ca-app-pub-5255542577835734/9403652851"</string>
+    <string name="admob_app_id">"ca-app-pub-5255542577835734~3909042773"</string>-->
+    <integer name="ad_load_time">180000</integer>
+    <!--<integer name="ad_load_time">50000</integer>-->
+
+    <!--WEBSERVICE URLS-->
+    <string name="base_url">"http://34.210.187.141:80/API/"</string>
+    <!--<string name="base_url">"http://192.168.0.19:2020/API/"</string>-->
+    <string name="registration_url">"Registration/UserRegistration"</string>
+    <string name="login_url">"Registration/UserLogin"</string>
+    <string name="auto_login_url">"Registration/AutoLogin"</string>
+    <string name="get_exercise_url">"Exercises/GetExercise"</string>
+    <string name="save_manual_mode_url">"Manual/SubmitSelectedTemplate"</string>
+    <string name="get_exercise_history_url">"History/GetHistory"</string>
+    <string name="get_answer_url">"Answers/SubmitAnswer"</string>
+    <string name="quit_exercise_url">"ExitCall/GetAnswer"</string>
+    <string name="forgot_password_url">"Registration/ForgotPassword"</string>
+    <string name="manual_mode_url">"Manual/ManualVerbs"</string>
+</resources>

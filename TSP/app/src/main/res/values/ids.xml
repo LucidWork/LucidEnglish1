@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="collapsed" type="id"/>
+    <item name="expanded" type="id"/>
+    <item name="no_children" type="id"/>
+</resources>
