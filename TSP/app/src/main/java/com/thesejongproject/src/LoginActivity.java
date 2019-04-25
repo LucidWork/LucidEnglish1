@@ -123,7 +123,7 @@ public class LoginActivity extends BaseActivity {
                             SmartApplication.REF_SMART_APPLICATION.writeSharedPreferences(SP_WORD_HOUSE, result.getJSONArray("WordHouse").toString());
                             SmartApplication.REF_SMART_APPLICATION.writeSharedPreferences(SP_IS_MANUAL_MODE, result.getInt("IsManualMode"));
                             SmartApplication.REF_SMART_APPLICATION.writeSharedPreferences(SP_HIT_TIMER, false);
-                            Intent exerciseIntent = new Intent(LoginActivity.this, ExerciseActivity.class);
+                            Intent exerciseIntent = new Intent(LoginActivity.this, MenuActivity.class);
                             exerciseIntent.putExtra("isLogin",true);
                             startActivity(exerciseIntent);
                             supportFinishAfterTransition();
@@ -133,7 +133,8 @@ public class LoginActivity extends BaseActivity {
                         }
                     } else {
                         try {
-                            getOKDialog(LoginActivity.this, response.getString("ErrorMessage"), getString(R.string.ok), true, new AlertNeutral() {
+                            getOKDialog(LoginActivity.this, response.getString("ErrorMessage"),
+                                    getString(R.string.ok), true, new AlertNeutral() {
                                 @Override
                                 public void NeutralMathod(DialogInterface dialog, int id) {
 

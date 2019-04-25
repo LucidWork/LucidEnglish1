@@ -3,14 +3,9 @@ package com.thesejongproject.src;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 import com.thesejongproject.R;
 import com.thesejongproject.customviews.SmartTextView;
 
@@ -68,6 +63,7 @@ public class QuitActivity extends BaseActivity {
                 }
                 Intent exerciseIntent = new Intent(QuitActivity.this, MenuActivity.class);
                 startActivity(exerciseIntent);
+                finish();
             }
         });
 
@@ -75,9 +71,11 @@ public class QuitActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 displayAd(QuitActivity.this, true);
-                /*Intent exerciseIntent = new Intent(QuitActivity.this, ExerciseActivity.class);
+                /*
+                Intent exerciseIntent = new Intent(QuitActivity.this, ExerciseActivity.class);
                 startActivity(exerciseIntent);
-                supportFinishAfterTransition();*/
+                supportFinishAfterTransition();
+                */
             }
         });
     }

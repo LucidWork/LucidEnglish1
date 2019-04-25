@@ -55,7 +55,6 @@ public class ProfileActivity extends BaseActivity {
 
     @Override
     public void prepareViews() {
-
         try {
             JSONObject user = new JSONObject(SmartApplication.REF_SMART_APPLICATION.readSharedPreferences().getString(SP_LOGGED_USER, null));
             edtFirstName.setText(user.getString("Firstname"));
@@ -134,6 +133,7 @@ public class ProfileActivity extends BaseActivity {
         params.put("Username", edtUsername.getText().toString());
         params.put("Email", edtEmail.getText().toString());
         params.put("Password", edtPassword.getText().toString());
+        params.put("DeviceId", SplashActivity.TestDeviceId);
 
         HashMap<SmartWebManager.REQUEST_METHOD_PARAMS, Object> requestParams = new HashMap<>();
         requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.URL, getString(R.string.base_url) + getString(R.string.registration_url));
@@ -177,6 +177,7 @@ public class ProfileActivity extends BaseActivity {
     private void enableDisableView(boolean flag) {
         edtFirstName.setFocusableInTouchMode(flag);
         edtLastName.setFocusableInTouchMode(flag);
+        edtUsername.setFocusableInTouchMode(flag);
         edtEmail.setFocusableInTouchMode(flag);
         edtPassword.setFocusableInTouchMode(flag);
         edtConfirmPassword.setFocusableInTouchMode(flag);

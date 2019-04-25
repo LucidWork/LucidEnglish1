@@ -148,10 +148,20 @@ public class ManualModeActivity extends BaseActivity {
                                 SelectedTemplateVerb.put(SelectedTemplate);
                             }
                         }
-
-                        saveManualMode(SelectedTemplateVerb);
+                        boolean hasValues = false;
+                        for (int c = 0; c < SelectedTemplateVerb.length(); c++) {
+                            JSONObject jb = (JSONObject) SelectedTemplateVerb.get(c);
+                            if (jb.has("Tenses") && jb.getJSONArray("Tenses").length() > 0) {
+                                hasValues = true;
+                                break;
+                            }
+                        }
+                        if (hasValues) {
+                             saveManualMode(SelectedTemplateVerb);
+                        } else {
+                            Toast.makeText(ManualModeActivity.this, "Please select at least one Template Tenses!", Toast.LENGTH_SHORT).show();
+                        }
                     } else {
-
                         Toast.makeText(ManualModeActivity.this, "Please select at least one Template!", Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
@@ -169,7 +179,8 @@ public class ManualModeActivity extends BaseActivity {
 
         HashMap<SmartWebManager.REQUEST_METHOD_PARAMS, Object> requestParams = new HashMap<>();
         requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.CONTEXT, ManualModeActivity.this);
-        requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.URL, getString(R.string.base_url) + getString(R.string.manual_mode_url));
+        requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.URL, getString(R.string.base_url)
+                + getString(R.string.manual_mode_url));
         requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.TAG, Constants.WEB_GET_MANUAL_MODE);
         requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.PARAMS, params);
         requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.RESPONSE_LISTENER, new SmartWebManager.OnResponseReceivedListener() {

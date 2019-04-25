@@ -85,7 +85,6 @@ public class ResultActivity extends BaseActivity {
 
     @Override
     public void setActionListeners() {
-
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,11 +99,11 @@ public class ResultActivity extends BaseActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                /*Intent exerciseIntent = new Intent(ResultActivity.this, ExerciseActivity.class);
+                /*
+                Intent exerciseIntent = new Intent(ResultActivity.this, ExerciseActivity.class);
                 startActivity(exerciseIntent);
-
-                supportFinishAfterTransition();*/
+                supportFinishAfterTransition();
+                */
                 displayAd(ResultActivity.this, true);
             }
         });
@@ -112,6 +111,6 @@ public class ResultActivity extends BaseActivity {
 
     @Override
     public void manageAppBar(ActionBar actionBar, Toolbar toolbar) {
-
     }
+
 }

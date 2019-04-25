@@ -268,7 +268,11 @@ public class ExercisesHistoryActivity extends BaseActivity {
 
         @Override
         public int getItemCount() {
-            return exerciseHistory.size();
+            try {
+                return exerciseHistory.size();
+            } catch (Exception e) {
+                return 0;
+            }
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {

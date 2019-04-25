@@ -33,7 +33,6 @@ public class ForgotPasswordActivity extends BaseActivity {
 
     @Override
     public void initComponents() {
-
         edtEmail = (SmartEditText) findViewById(R.id.edtEmail);
         btnSend = (SmartTextView) findViewById(R.id.btnSend);
     }

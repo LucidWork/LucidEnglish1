@@ -63,13 +63,12 @@ public class TutorialActivity extends AppCompatActivity implements Constants {
             public void onClick(View view) {
                 if (getIntent().getBooleanExtra("is_signup", true)) {
                     SmartApplication.REF_SMART_APPLICATION.writeSharedPreferences(SP_HIT_TIMER, false);
-                    Intent intent = new Intent(TutorialActivity.this, ExerciseActivity.class);
+                    Intent intent = new Intent(TutorialActivity.this, MenuActivity.class);
                     startActivity(intent);
                     finish();
-                }else {
+                } else {
                     supportFinishAfterTransition();
                 }
-
             }
         });
     }

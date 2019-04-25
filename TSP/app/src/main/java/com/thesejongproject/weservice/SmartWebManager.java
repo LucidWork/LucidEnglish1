@@ -21,13 +21,9 @@ import java.util.Map;
 public class SmartWebManager implements Constants {
 
     private static final int TIMEOUT = 100000;
-
-    public enum REQUEST_METHOD_PARAMS {URL, CONTEXT, PARAMS, TAG, RESPONSE_LISTENER}
-
     private static SmartWebManager mInstance;
-    private RequestQueue mRequestQueue;
     private static Context mCtx;
-
+    private RequestQueue mRequestQueue;
     private SmartWebManager(Context context) {
         mCtx = context;
         mRequestQueue = getRequestQueue();
@@ -90,6 +86,48 @@ public class SmartWebManager implements Constants {
         getRequestQueue().add(jsonObjectRequest);
     }
 
+    public <T> void addToGETRequestQueue(final HashMap<REQUEST_METHOD_PARAMS, Object> requestParams) {
+        Log.v("@@@@@WSUrl", (String) requestParams.get(REQUEST_METHOD_PARAMS.URL));
+        JSONObject jsonBody = (JSONObject) requestParams.get(REQUEST_METHOD_PARAMS.PARAMS);
+        Log.v("@@@@@WSParameters", jsonBody.toString());
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+                (String) requestParams.get(REQUEST_METHOD_PARAMS.URL), null,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.v("@@@@@WSResponse", response.toString());
+                        if (getResponseCode(response) == 200) {
+                            ((OnResponseReceivedListener) requestParams.get(REQUEST_METHOD_PARAMS.RESPONSE_LISTENER)).onResponseReceived(response, true, 200);
+                        } else {
+                            int responseCode = getResponseCode(response);
+                            ((OnResponseReceivedListener) requestParams.get(REQUEST_METHOD_PARAMS.RESPONSE_LISTENER)).onResponseReceived(response, false, responseCode);
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        Log.v("@@@@@Error", volleyError.toString());
+                        ((OnResponseReceivedListener) requestParams.get(REQUEST_METHOD_PARAMS.RESPONSE_LISTENER)).onResponseError();
+                    }
+                }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("Content-Type", "application/json; charset=utf-8");
+                return headers;
+            }
+        };
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
+                TIMEOUT,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        jsonObjectRequest.setTag(requestParams.get(REQUEST_METHOD_PARAMS.TAG));
+        getRequestQueue().add(jsonObjectRequest);
+    }
+
     public int getResponseCode(JSONObject response) {
         if (response.has("Status")) {
             try {
@@ -104,9 +142,10 @@ public class SmartWebManager implements Constants {
         return 404;
     }
 
+    public enum REQUEST_METHOD_PARAMS {URL, CONTEXT, PARAMS, TAG, RESPONSE_LISTENER}
+
     public interface OnResponseReceivedListener {
         void onResponseReceived(JSONObject tableRows, boolean isValidResponse, int responseCode);
-
         void onResponseError();
     }
 }

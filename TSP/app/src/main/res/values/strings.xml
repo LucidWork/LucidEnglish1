@@ -43,7 +43,7 @@
 
     <string name="menu">"Menu"</string>
     <string name="history">"Exercises History"</string>
-    <string name="manual">"Manual Mode"</string>
+    <string name="manual">"Exercises"</string>
     <string name="auto">"Auto Mode"</string>
     <string name="vocab_levels">"Vocabulary Levels"</string>
     <string name="tenses">"Tenses/Variations"</string>

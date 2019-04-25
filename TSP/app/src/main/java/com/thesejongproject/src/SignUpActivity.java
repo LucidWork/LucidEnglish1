@@ -11,6 +11,7 @@ import com.thesejongproject.customviews.SmartEditText;
 import com.thesejongproject.customviews.SmartTextView;
 import com.thesejongproject.smart.Constants;
 import com.thesejongproject.smart.SmartApplication;
+import com.thesejongproject.smart.Utility;
 import com.thesejongproject.weservice.SmartWebManager;
 
 import org.json.JSONObject;
@@ -106,6 +107,7 @@ public class SignUpActivity extends BaseActivity {
             params.put("Username", edtUsername.getText().toString());
             params.put("Email", edtEmail.getText().toString());
             params.put("Password", edtPassword.getText().toString());
+            params.put("DeviceId", Utility.getUniqueDeviceID(SignUpActivity.this));
 
             HashMap<SmartWebManager.REQUEST_METHOD_PARAMS, Object> requestParams = new HashMap<>();
             requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.URL, getString(R.string.base_url) + getString(R.string.registration_url));
@@ -126,7 +128,7 @@ public class SignUpActivity extends BaseActivity {
                             SmartApplication.REF_SMART_APPLICATION.writeSharedPreferences(SP_IS_MANUAL_MODE, result.getInt("IsManualMode"));
 
                             Intent intent = new Intent(SignUpActivity.this, TutorialActivity.class);
-                            intent.putExtra("is_signup",true);
+                            intent.putExtra("is_signup", true);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             finish();

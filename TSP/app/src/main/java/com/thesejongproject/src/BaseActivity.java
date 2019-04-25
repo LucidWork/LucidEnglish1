@@ -167,7 +167,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseActi
                     if (isFinish) {
                         finish();
                     }
-
                 }
 
                 @Override
@@ -176,8 +175,8 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseActi
 
                 @Override
                 public void onAdOpened() {
-
                 }
+
             });
         } else {
             Intent exerciseIntent = new Intent(context, ExerciseActivity.class);
@@ -235,7 +234,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseActi
     }
 
     public void clearActivityStack(Activity currentActivity, Intent intent) {
-
         Intent mainIntent = Intent.makeRestartActivityTask(intent.getComponent());
         ActivityCompat.startActivity(currentActivity, mainIntent, null);
     }

@@ -38,7 +38,8 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/error_message_bg"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <com.thesejongproject.customviews.SmartTextView
                 android:layout_width="0dp"
@@ -178,5 +179,6 @@
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:visibility="gone" />
 </LinearLayout>

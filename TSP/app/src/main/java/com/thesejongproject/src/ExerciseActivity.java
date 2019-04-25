@@ -312,7 +312,6 @@ public class ExerciseActivity extends BaseActivity implements OnStartDragListene
     private void getExercise() throws Exception {
         showLoadingDialog(ExerciseActivity.this);
 
-
         JSONObject params = new JSONObject();
         params.put("UserID", SmartApplication.REF_SMART_APPLICATION.readSharedPreferences().getString(SP_LOGGED_USER_ID, "0"));
         params.put("IsManualMode", SmartApplication.REF_SMART_APPLICATION.readSharedPreferences().getInt(SP_IS_MANUAL_MODE, 0));
@@ -374,7 +373,6 @@ public class ExerciseActivity extends BaseActivity implements OnStartDragListene
 
             @Override
             public void onResponseError() {
-
             }
         });
         SmartWebManager.getInstance(getApplicationContext()).addToRequestQueue(requestParams);
@@ -415,7 +413,6 @@ public class ExerciseActivity extends BaseActivity implements OnStartDragListene
                             startActivity(resultIntent);
                             supportFinishAfterTransition();
                         } else {
-
                             lnrErrorMessage.setVisibility(View.VISIBLE);
                             txtErrorMessage.setText(results.getString("Message"));
                         }
