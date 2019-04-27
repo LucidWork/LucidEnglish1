@@ -56,7 +56,7 @@ public class SplashActivity extends AppCompatActivity implements Constants {
 
         setContentView(R.layout.activity_splash);
 
-        TestDeviceId = /*"159753";*/  Utility.getUniqueDeviceID(SplashActivity.this);
+        TestDeviceId =  Utility.getUniqueDeviceID(SplashActivity.this);
 
 
         progress = (ProgressBar) findViewById(R.id.progress);
@@ -85,7 +85,6 @@ public class SplashActivity extends AppCompatActivity implements Constants {
     }
 
     private void registerUser(String deviceId) {
-        Log.e("!_@_@", "-----------go for register--------");
         try {
             progress.setVisibility(View.VISIBLE);
 
