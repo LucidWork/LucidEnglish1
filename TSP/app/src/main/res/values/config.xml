@@ -12,8 +12,8 @@
     <!--<integer name="ad_load_time">50000</integer>-->
 
     <!--WEBSERVICE URLS-->
- <!--   <string name="base_url">"http://34.210.187.141:80/API/"</string>-->
-    <string name="base_url">"http://clientapp.narola.online:1065/API/"</string>
+    <string name="base_url">"http://34.210.187.141:80/API/"</string>
+    <!--<string name="base_url">"http://clientapp.narola.online:1065/API/"</string>-->
 
     <string name="registration_url">"Registration/UserRegistration"</string>
     <string name="login_url">"Registration/UserLogin"</string>

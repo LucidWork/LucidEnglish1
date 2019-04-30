@@ -1,9 +1,11 @@
 package com.thesejongproject.smart;
 
-import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
 import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.crash.FirebaseCrash;
@@ -12,18 +14,20 @@ import com.thesejongproject.service.TimerService;
 
 import java.io.IOException;
 
-public class SmartApplication extends Application {
+public class SmartApplication extends MultiDexApplication {
 
     public static SmartApplication REF_SMART_APPLICATION;
-
+    public static Intent lintent;
+    public Typeface FONT;
+    public Typeface BOLDFONT;
     private SharedPreferences sharedPreferences;
-
     private SmartDataHelper dataHelper;
 
-    public Typeface FONT;
-
-    public Typeface BOLDFONT;
-    public static Intent lintent;
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
     @Override
     public void onCreate() {

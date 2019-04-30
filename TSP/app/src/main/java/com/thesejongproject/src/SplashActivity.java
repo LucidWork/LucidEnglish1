@@ -56,7 +56,7 @@ public class SplashActivity extends AppCompatActivity implements Constants {
 
         setContentView(R.layout.activity_splash);
 
-        TestDeviceId =  Utility.getUniqueDeviceID(SplashActivity.this);
+        TestDeviceId = Utility.getUniqueDeviceID(SplashActivity.this);
 
 
         progress = (ProgressBar) findViewById(R.id.progress);

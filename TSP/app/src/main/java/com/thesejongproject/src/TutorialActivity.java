@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.thesejongproject.R;
 import com.thesejongproject.customviews.CirclePageIndicator;
 import com.thesejongproject.customviews.SmartTextView;
@@ -105,7 +106,11 @@ public class TutorialActivity extends AppCompatActivity implements Constants {
 
             ImageView imgTutorial = (ImageView) itemView.findViewById(R.id.imgTutorial);
 
-            imgTutorial.setBackgroundResource(images_array[position]);
+            Glide.with(mContext)
+                    .load(images_array[position])
+                    .into(imgTutorial);
+
+//            imgTutorial.setImageDrawable(mContext.getResources().getDrawable(images_array[position]));
 
             container.addView(itemView);
 
