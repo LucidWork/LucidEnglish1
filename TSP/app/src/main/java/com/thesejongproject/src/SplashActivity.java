@@ -25,11 +25,8 @@ import java.util.HashMap;
 
 public class SplashActivity extends AppCompatActivity implements Constants {
 
-    public static String TestDeviceId = "";
-    private final int SPLASH_DISPLAY_LENGTH = 1000;
+    private String TestDeviceId = "";
     private ProgressBar progress;
-    private Handler splashHandler = new Handler();
-    private Runnable runnable;
 
     public void getOKDialog(Context context, String msg, String buttonCaption,
                             boolean isCancelable, final AlertNeutral target) {
@@ -61,31 +58,29 @@ public class SplashActivity extends AppCompatActivity implements Constants {
 
         progress = (ProgressBar) findViewById(R.id.progress);
 
-       /* if (TextUtils.isEmpty(SmartApplication.REF_SMART_APPLICATION.readSharedPreferences().
-                getString(SP_LOGGED_USER_ID, null))) {
 
-            runnable = new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        authenticateUser(TestDeviceId);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    authenticateUser(TestDeviceId);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            };
-            splashHandler.postDelayed(runnable, SPLASH_DISPLAY_LENGTH);
-        }*/
-
-        try {
-            authenticateUser(TestDeviceId);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            }
+        }, 750);
     }
 
     private void registerUser(String deviceId) {
-        try {
+
+        Intent intent = new Intent(SplashActivity.this, PrivacyPolicyActivity.class);
+        intent.putExtra("showBack",false);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+
+       /* try {
             progress.setVisibility(View.VISIBLE);
 
             JSONObject params = new JSONObject();
@@ -134,7 +129,8 @@ public class SplashActivity extends AppCompatActivity implements Constants {
                 @Override
                 public void onResponseError() {
                     try {
-                        getOKDialog(SplashActivity.this, "Error while fetching data.", getString(R.string.ok), false,
+                        getOKDialog(SplashActivity.this, "Error while fetching data.",
+                                getString(R.string.ok), false,
                                 new AlertNeutral() {
                                     @Override
                                     public void NeutralMathod(DialogInterface dialog, int id) {
@@ -149,7 +145,7 @@ public class SplashActivity extends AppCompatActivity implements Constants {
             SmartWebManager.getInstance(getApplicationContext()).addToRequestQueue(requestParams);
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     private void startMenuScreen(JSONObject response, boolean isNewUser) {
@@ -257,13 +253,5 @@ public class SplashActivity extends AppCompatActivity implements Constants {
                     }
                 });
         SmartWebManager.getInstance(getApplicationContext()).addToGETRequestQueue(requestParams);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (splashHandler != null) {
-            splashHandler.removeCallbacks(runnable);
-        }
     }
 }

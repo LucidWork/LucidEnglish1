@@ -23,6 +23,7 @@ public class MenuActivity extends BaseActivity {
     private LinearLayout btnManualMode;
     private LinearLayout btnAutoMode;
     private LinearLayout btnQuickTutorial;
+    private LinearLayout btnPrivacyPolicy;
     private SmartTextView btnLogout;
 
     @Override
@@ -38,6 +39,7 @@ public class MenuActivity extends BaseActivity {
         btnManualMode = (LinearLayout) findViewById(R.id.btnManualMode);
         btnAutoMode = (LinearLayout) findViewById(R.id.btnAutoMode);
         btnQuickTutorial = (LinearLayout) findViewById(R.id.btnQuickTutorial);
+        btnPrivacyPolicy = (LinearLayout) findViewById(R.id.btnPrivacyPolicy);
         btnLogout = (SmartTextView) findViewById(R.id.btnLogout);
     }
 
@@ -96,6 +98,15 @@ public class MenuActivity extends BaseActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, TutorialActivity.class);
                 intent.putExtra("is_signup", false);
+                startActivity(intent);
+            }
+        });
+
+        btnPrivacyPolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, PrivacyPolicyActivity.class);
+                intent.putExtra("showBack",true);
                 startActivity(intent);
             }
         });

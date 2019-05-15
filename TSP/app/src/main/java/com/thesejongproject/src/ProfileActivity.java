@@ -10,6 +10,7 @@ import com.thesejongproject.customviews.SmartEditText;
 import com.thesejongproject.customviews.SmartTextView;
 import com.thesejongproject.smart.Constants;
 import com.thesejongproject.smart.SmartApplication;
+import com.thesejongproject.smart.Utility;
 import com.thesejongproject.weservice.SmartWebManager;
 
 import org.json.JSONObject;
@@ -133,7 +134,7 @@ public class ProfileActivity extends BaseActivity {
         params.put("Username", edtUsername.getText().toString());
         params.put("Email", edtEmail.getText().toString());
         params.put("Password", edtPassword.getText().toString());
-        params.put("DeviceId", SplashActivity.TestDeviceId);
+        params.put("DeviceId", Utility.getUniqueDeviceID(ProfileActivity.this));
 
         HashMap<SmartWebManager.REQUEST_METHOD_PARAMS, Object> requestParams = new HashMap<>();
         requestParams.put(SmartWebManager.REQUEST_METHOD_PARAMS.URL, getString(R.string.base_url) + getString(R.string.registration_url));

@@ -167,6 +167,34 @@
                 android:layout_marginRight="8dp"
                 android:src="@drawable/ic_right_arrow" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnPrivacyPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/error_message_bg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.thesejongproject.customviews.SmartTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:text="@string/privacy_policy"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_right_arrow" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <com.thesejongproject.customviews.SmartTextView
